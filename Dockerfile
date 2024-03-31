@@ -51,7 +51,7 @@ RUN mkdir -p /var/log/supervisor
 WORKDIR /app
 
 COPY --from=op /app/optimism/op-node/bin/op-node ./
-COPY --from=geth /app/build/bin/geth ./
+COPY --from=geth /app/op-geth/build/bin/geth ./
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY geth-entrypoint .
 COPY op-node-entrypoint .
