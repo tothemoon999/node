@@ -15,7 +15,7 @@ ENV COMMIT=c87a469d7d679e8a4efbace56c3646b925bcc009
 RUN git clone $REPO
 
 
-RUN cd op-node && \
+RUN cd /app/optimism/op-node && \
     make VERSION=$VERSION op-node
 
 FROM golang:1.21 as geth
