@@ -34,7 +34,8 @@ ENV COMMIT=0402d543c3d0cff3a3d344c0f4f83809edb44f10
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 
 RUN git clone $REPO
-RUN cd /app/op-geth
+# RUN cd /app/op-geth
+WORKDIR /app/op-geth
 
 RUN go mod download
 
