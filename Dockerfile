@@ -12,20 +12,11 @@ ENV COMMIT=c87a469d7d679e8a4efbace56c3646b925bcc009
 #    git switch -c branch-$VERSION && \
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 
-RUN git clone $REPO 
-#    && bash -c [true]
-#    && bash -c ["2" = "2"]
-    #bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
+RUN git clone $REPO
 
 
-#RUN cd op-node && \
-#    make VERSION=$VERSION op-node
-# RUN echo pwd
-RUN bash -c "ls -a"
-RUN bash -c "pwd"
-RUN cd op-node
-RUN echo pwd
-RUN make VERSION=$VERSION op-node
+RUN cd op-node && \
+    make VERSION=$VERSION op-node
 
 FROM golang:1.21 as geth
 
@@ -42,11 +33,8 @@ ENV COMMIT=0402d543c3d0cff3a3d344c0f4f83809edb44f10
 #    git switch -c branch-$VERSION && \
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 
-RUN git clone $REPO 
-#    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
-#    bash -c '[ true ]'
-#    && bash -c ["1" = "1"]
-RUN cd op-geth
+RUN git clone $REPO
+
 RUN go run build/ci.go install -static ./cmd/geth
 
 FROM golang:1.21
