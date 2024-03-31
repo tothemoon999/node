@@ -20,7 +20,7 @@ RUN git clone $REPO
 
 #RUN cd op-node && \
 #    make VERSION=$VERSION op-node
-RUN ls
+RUN cd optimism
 RUN cd op-node
 RUN make VERSION=$VERSION op-node
 
@@ -43,7 +43,7 @@ RUN git clone $REPO
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 #    bash -c '[ true ]'
 #    && bash -c ["1" = "1"]
-
+RUN cd op-geth
 RUN go run build/ci.go install -static ./cmd/geth
 
 FROM golang:1.21
