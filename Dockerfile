@@ -18,8 +18,11 @@ RUN git clone $REPO
     #bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 
 
-RUN cd op-node && \
-    make VERSION=$VERSION op-node
+#RUN cd op-node && \
+#    make VERSION=$VERSION op-node
+RUN ls
+RUN cd op-node
+RUN make VERSION=$VERSION op-node
 
 FROM golang:1.21 as geth
 
