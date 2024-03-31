@@ -12,7 +12,7 @@ ENV COMMIT=c87a469d7d679e8a4efbace56c3646b925bcc009
 #    git switch -c branch-$VERSION && \
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 
-RUN git clone $REPO \
+RUN git clone $REPO 
 #    && bash -c [true]
 #    && bash -c ["2" = "2"]
     #bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
