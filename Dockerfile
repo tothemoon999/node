@@ -20,7 +20,7 @@ RUN git clone $REPO
 
 #RUN cd op-node && \
 #    make VERSION=$VERSION op-node
-RUN echo pwd
+# RUN echo pwd
 RUN cd optimism
 RUN echo pwd
 RUN cd op-node
