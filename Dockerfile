@@ -36,7 +36,7 @@ ENV COMMIT=0402d543c3d0cff3a3d344c0f4f83809edb44f10
 RUN git clone $REPO
 RUN cd /app/op-geth
 
-RUN go mod download /app/op-geth
+RUN go mod download
 
 RUN go run /app/op-geth/build/ci.go install -static /app/op-geth/cmd/geth
 
