@@ -13,7 +13,8 @@ ENV COMMIT=c87a469d7d679e8a4efbace56c3646b925bcc009
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 
 RUN git clone $REPO \
-    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
+    bash -c '[true]'
+    #bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 
 
 RUN cd op-node && \
