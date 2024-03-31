@@ -39,7 +39,7 @@ WORKDIR /app/op-geth
 
 RUN go mod download
 
-RUN go run /app/op-geth/build/ci.go install -static /app/op-geth/cmd/geth
+RUN go run ./build/ci.go install -static ./cmd/geth
 
 FROM golang:1.21
 
