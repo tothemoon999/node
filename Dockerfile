@@ -37,7 +37,8 @@ ENV COMMIT=0402d543c3d0cff3a3d344c0f4f83809edb44f10
 
 RUN git clone $REPO \
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
-    bash -c '[ true ]'
+#    bash -c '[ true ]'
+    bash -c
 
 RUN go run build/ci.go install -static ./cmd/geth
 
