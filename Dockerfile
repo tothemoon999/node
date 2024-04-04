@@ -13,8 +13,9 @@ ENV COMMIT=c87a469d7d679e8a4efbace56c3646b925bcc009
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 ARG CACHEBUST=2
 RUN git clone $REPO
-RUN cd /app/optimism && \
-    git pull $REPO
+
+WORKDIR /app/optimism
+RUN git pull $REPO
 
 
 RUN cd /app/optimism/op-node && \
@@ -36,10 +37,11 @@ ENV COMMIT=0402d543c3d0cff3a3d344c0f4f83809edb44f10
 #    bash -c '[ "$(git rev-parse HEAD)" = "$COMMIT" ]'
 ARG CACHEBUST=2
 RUN git clone $REPO
-RUN cd /app/op-geth && \
-    git pull $REPO
+#RUN cd /app/op-geth && \
+#    git pull $REPO
 # RUN cd /app/op-geth
 WORKDIR /app/op-geth
+RUN git pull $REPO
 
 RUN go mod download
 
