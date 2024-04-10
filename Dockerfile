@@ -19,8 +19,6 @@ RUN git pull $REPO
 
 
 
-
-
 RUN cd /app/optimism/op-node && \
     make VERSION=$VERSION op-node
 
